@@ -1,10 +1,10 @@
 ---
 ---
 $(function() {
-	$('#search-button').on('click', function() {
+  $('#search-button').on('click', function() {
     return search();
   });
-  
+
   $('#search-query').on('keyup', function() {
     return search();
   });
@@ -14,21 +14,29 @@ $(function() {
     var result  = $('#search-results');
     var entries = $('#search-results .entries');
 
-    if (query.length <= 2) {
+    if (!query.trim()) {
       result.hide();
       entries.empty();
     } else {
-      // retrieve matching result with content
-      var results = $.map(idx.search(query), function(result) {
-        return $.grep(docs, function(entry) {
-          return entry.id === result.ref;
-        })[0];
+      var results = idx.search(query).slice(0, 100).map(function(result) {
+        return docsMap[result.ref];
       });
+
+      if (!results.length) {
+        results = query.replace(/[a-zA-Z0-9]/g, '')
+          .split('')
+          .map(function(kanji) {
+            return docsMap[kanji] ? docsMap[kanji] : null;
+          })
+          .filter(function(doc) {
+            return doc !== null;
+          });
+      }
 
       entries.empty();
 
-      if (results && results.length > 0) {
-        $.each(results, function(key, page) {
+      if (results.length) {
+        results.forEach(function(page) {
           entries.append('<article>'+
           '  <h3>'+
           '    <a href="./'+page.kanji.charAt(0)+'/index.html">'+page.kanji+' '+page.keyword+'</a>'+
@@ -41,7 +49,5 @@ $(function() {
 
       result.show();
     }
-
-    return false;
   }
 });
