@@ -146,6 +146,7 @@ a:hover,
   border-color: #222222;
   border-style: solid !important;
   border-width: 2px !important;
+  border-radius: 5px
 }
 
 .btn.title {
@@ -270,24 +271,28 @@ th, td {
 
 /* Search box in index */
 
-#search-box {
-  margin: 5em;
-  text-align: center;
+#search-bar {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  max-width: 20rem;
+  margin: auto
 }
 
 #search-query {
+  padding: 0.5rem;
   height: 2rem;
-}
-
-#search-button {
-  height: 2rem;
+  width: 100%;
+  border-radius: 5px;
+  border-width: 1px
 }
 
 #search-results {
-  margin: 3em;
+  margin: 1rem auto 2rem
 }
 
 #kanjiViewer {
-    height: 290px;
-    text-align: center;
+  height: 290px;
+  text-align: center
 }
