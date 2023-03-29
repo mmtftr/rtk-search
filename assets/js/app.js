@@ -18,7 +18,7 @@ $(function() {
   });
 
   const getHtmlForLetter = (letter, i) => {
-    return `<a class="letter" onclick="removeKanji(${i})">${letter}</a>`;
+    return `<a class="letter" onclick="removeKanji('${i}')">${letter}</a>`;
   }
 
   window.addKanji = (kanji) => {
@@ -70,7 +70,7 @@ $(function() {
           entries.append('<article>'+
           '  <h3>'+
           '    <a href="./'+page.kanji.charAt(0)+'/index.html">'+page.kanji+' '+page.keyword+'</a>  '+
-          '<span onclick="addKanji('+page.kanji.charAt(0)+')">+</span>'+
+          '<span onclick="addKanji(\''+page.kanji.charAt(0)+'\')">+</span>'+
           '  </h3>'+
           '</article>');
         });
