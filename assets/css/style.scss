@@ -271,6 +271,11 @@ th, td {
 
 /* Search box in index */
 
+#search-box {
+  display: flex;
+  flex-direction: column;
+}
+
 #search-bar {
   display: flex;
   padding: 1rem 0;
@@ -292,7 +297,15 @@ th, td {
   margin: 1rem auto 2rem
 }
 
+#word {
+  margin-right: 1rem;
+}
+
 #kanjiViewer {
   height: 290px;
   text-align: center
+}
+
+.letter {
+  font-size: 1.5rem;
 }

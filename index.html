@@ -4,24 +4,32 @@ type: index
 ---
 
 <h1>{{ site.title }}</h1>
-<hr>
-
-
+<hr />
 
 <div id="search-box">
-	<div id="search-bar">
-		<input type="search" id="search-query" name="q" placeholder="Search by keyword / Kanji..." autocomplete="off">
-	</div>
-	<div id="search-results" style="display: none;">
-		<div class="entries"></div>
-	</div>
+  <div id="built-word">
+    <span id="word">Empty</span>
+    <button class="btn btn-blue">Copy</button>
+  </div>
+  <div id="search-bar">
+    <input
+      type="search"
+      id="search-query"
+      name="q"
+      placeholder="Search by keyword / Kanji..."
+      autocomplete="off"
+    />
+  </div>
+  <div id="search-results" style="display: none">
+    <div class="entries"></div>
+  </div>
 </div>
 
-<hr>
+<hr />
 
 <nav class="pagination" role="navigation">
-	<a class="btn btn-blue" href="rtk1-v6/index.html">rtk1-v6</a>
-	<a class="btn btn-blue" href="rtk3-remain/index.html">rtk3-remain</a>
+  <a class="btn btn-blue" href="rtk1-v6/index.html">rtk1-v6</a>
+  <a class="btn btn-blue" href="rtk3-remain/index.html">rtk3-remain</a>
 </nav>
 
 <script src="assets/js/jquery.min.js"></script>
